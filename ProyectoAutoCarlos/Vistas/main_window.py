@@ -17,14 +17,33 @@ class MainWindow (QtGui.QWidget):
         h_layout.addWidget(self.label)
         button_subir = QtGui.QPushButton('Subir Persona')
         button_bajar = QtGui.QPushButton('Bajar Persona')
-        button_bajar5 = QtGui.QPushButton('bajar personas 5')
+        button_subir5 = QtGui.QPushButton('Subir 5 Personas')
+        button_bajar5 = QtGui.QPushButton('Bajar 5 Personas')
+        button_subir_varias = QtGui.QPushButton('Subir estas Personas')
+        button_bajar_varias = QtGui.QPushButton('Bajar estas Personas')
+
+        self.ingreso_numero = QtGui.QLineEdit(self)
+
+
+#¿?
+#        button_subir_varias = QtGui.QInputDialog('Subir estas Personas')
+#        button_bajar_varias = QtGui.QInputDialog('Bajar estas Personas')
+
         h_layout.addWidget(button_subir)
         h_layout.addWidget(button_bajar)
         h_layout.addWidget(button_bajar5)
+        h_layout.addWidget(button_subir5)
+        h_layout.addWidget(button_subir_varias)
+        h_layout.addWidget(button_bajar_varias)
+
 
         button_subir.clicked.connect(self.controlador.handler_subir_persona)
         button_bajar.clicked.connect(self.controlador.handler_bajar_persona)
         button_bajar5.clicked.connect(self.controlador.handler_bajar_persona5)
+        button_subir5.clicked.connect(self.controlador.handler_subir_persona5)
+        button_subir_varias.clicked.connect(self.controlador.handler_subir_varias_personas)
+        button_bajar_varias.clicked.connect(self.controlador.handler_bajar_varias_personas)
+
         self.setLayout(h_layout)
         self.setWindowTitle('Proyecto del Auto')
         self.setGeometry(200, 200, 200, 200)

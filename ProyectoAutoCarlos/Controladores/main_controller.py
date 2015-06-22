@@ -20,9 +20,29 @@ class MainControlador():
         #print self.auto.cantidad_personas
 
     def handler_bajar_persona5(self):
-        i = 1
-        while i <= 5:
-            i += 1
+        personas = 0
+        while personas <= 4:
+            personas += 1
+            self.handler_bajar_persona()
+
+    def handler_subir_persona5(self):
+        personas = 0
+        while personas <= 4:
+            personas += 1
+            self.handler_subir_persona()
+
+    def handler_subir_varias_personas(self):
+        personas = 0
+        cantidad = int(self.ventana.ingreso_numero.text())
+        while personas<cantidad:
+            self.handler_subir_persona()
+            personas +=1
+
+    def handler_bajar_varias_personas(self):
+        personas = 0
+        cantidad = int(self.ventana.ingreso_numero.text())
+        while personas<cantidad:
+            personas += 1
             self.handler_bajar_persona()
 
     def actualizar_label(self):
